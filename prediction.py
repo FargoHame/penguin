@@ -50,8 +50,7 @@ df = df[:1] # Selects only the first row (the user input data)
 # Displays the user input features
 st.subheader('User Input features')
 
-st.subheader('Class labels and their corresponding index number')
-st.write(penguins_species)
+
 
 # Reads in saved classification model
 load_clf = pickle.load(open('penguins_clf.pkl', 'rb'))
