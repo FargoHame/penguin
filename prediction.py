@@ -59,8 +59,7 @@ prediction = load_clf.predict(df)
 prediction_proba = load_clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(pd.DataFrame({
-...     
+st.write(pd.DataFrame({     
 ...     'Class labels and their corresponding index number': [species1, species2, species3]
 ... }))
 
