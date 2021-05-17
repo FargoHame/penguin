@@ -36,7 +36,7 @@ input_df = user_input_features()
 # This will be useful for the encoding phase
 penguins_raw = pd.read_csv('penguins_cleaned.csv')
 penguins = penguins_raw.drop(columns=['species'])
-df = pd.concat([input_df,penguins],penguins],axis=0)
+df = pd.concat([input_df,penguins],penguins),axis=0)
 
 # Encoding of ordinal features
 # https://www.kaggle.com/pratik1120/penguin-dataset-eda-classification-and-clustering
