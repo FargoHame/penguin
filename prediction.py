@@ -48,8 +48,6 @@ for col in encode:
     del df[col]
 df = df[:1] # Selects only the first row (the user input data)
 
-# Displays the user input features
-st.subheader('User Input features')
 
 
 
