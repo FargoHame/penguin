@@ -59,7 +59,10 @@ prediction = load_clf.predict(df)
 prediction_proba = load_clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-bh
+st.write(pd.DataFrame({
+...     
+...     'Class labels and their corresponding index number': [species1, species2, species3],
+... }))
 
 st.subheader('Prediction')
 penguins_species = np.array(['Adelie','Chinstrap','Gentoo'])
