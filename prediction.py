@@ -30,8 +30,10 @@ def user_input_features():
         features = pd.DataFrame(data, index=[0])
         return features
 input_df = user_input_features()
-    
-
+  
+st.subheader('User Input parameters')
+st.write(input_df)
+        
 # Combines user input features with entire penguins dataset
 # This will be useful for the encoding phase
 penguins_raw = pd.read_csv('penguins_cleaned.csv')
