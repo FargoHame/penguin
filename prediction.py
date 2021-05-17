@@ -6,9 +6,10 @@ from sklearn.ensemble import RandomForestClassifier
 
 st.write("""
 # Penguin Prediction App
-This app predicts the species of Palmer penguins found in Antarctica using Machine Learning!
-Dataset credits: Dr.Kristen Gorman and Palmer Station, Antarctica LTER and Allison Horst.
-Note: User inputs for features are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of parameters can be changed from the sidebar.
+- This app predicts the species of Palmer penguins found in Antarctica using Machine Learning!
+- App built by Pranav Sawant and Anshuman Shukla of Team Skillocity.
+- Dataset credits: Dr.Kristen Gorman and Palmer Station, Antarctica LTER and Allison Horst.
+- Note: User inputs for features are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of parameters can be changed from the sidebar.
 """)
 
 st.sidebar.header('User Input Features')
