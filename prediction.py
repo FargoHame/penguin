@@ -27,7 +27,7 @@ def user_input_features():
                 'body_mass_g': body_mass_g,
                 'sex': sex}
         features = pd.DataFrame(data, index=[0])
-        
+        return features
 input_df = user_input_features()
   
 st.subheader('User Input parameters')
