@@ -76,7 +76,7 @@ def load_image(img):
 
 if penguins_species[prediction] == 'Chinstrap':
     st.text("Showing Chinstrap Penguin")
-    st.image(load_image('chinstrap.jpg.jpg'))
+    st.image(load_image('chinstrap.jpg'))
 elif penguins_species[prediction] == 'Gentoo':
     st.text("Showing Gentoo Penguin")
     st.image(load_image('gentoo.jpg'))
