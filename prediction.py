@@ -66,3 +66,13 @@ st.write(penguins_species[prediction])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
+
+if penguins_species[prediction] == 'Chinstrap':
+    st.text("Showing Chinstrap Penguin")
+    st.image(load_image('chinstrap.jpg.jpg'))
+elif penguins_species[prediction] == 'Gentoo':
+    st.text("Showing Gentoo Penguin")
+    st.image(load_image('gentoo.jpg'))
+elif penguins_species[prediction] == 'Adelie':
+    st.text("Showing Adelie Penguin")
+    st.image(load_image('adelie.jpg'))
