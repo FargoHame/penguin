@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 from sklearn.ensemble import RandomForestClassifier
 from PIL import Image,ImageFilter,ImageEnhance
+import os
 
 st.write("""
 # Penguin Prediction App
@@ -67,6 +68,11 @@ st.write(penguins_species[prediction])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
+
+@st.cache
+def load_image(img):
+    im =Image.open(os.path.join(img))
+    return im
 
 if penguins_species[prediction] == 'Chinstrap':
     st.text("Showing Chinstrap Penguin")
