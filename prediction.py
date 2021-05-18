@@ -14,6 +14,8 @@ st.write("""
 - Note: User inputs for features are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of parameters can be changed from the sidebar.
 """)
 
+st.sidebar.header('User Input Features')
+
 
 def user_input_features():
         island = st.sidebar.selectbox('Island',('Biscoe','Dream','Torgersen'))
