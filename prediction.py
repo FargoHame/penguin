@@ -1,3 +1,8 @@
+#Penguin, alternate to iris
+#Simple like last time
+
+
+#import statements
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -6,6 +11,7 @@ from sklearn.ensemble import RandomForestClassifier
 from PIL import Image,ImageFilter,ImageEnhance
 import os
 
+#start
 st.write("""
 # Penguin Prediction App
 - This app predicts the species of Palmer penguins found in Antarctica using Machine Learning!
@@ -16,7 +22,7 @@ st.write("""
 
 st.sidebar.header('User Input Features')
 
-
+#inputs
 def user_input_features():
         island = st.sidebar.selectbox('Island',('Biscoe','Dream','Torgersen'))
         sex = st.sidebar.selectbox('Sex',('male','female'))
@@ -37,7 +43,7 @@ input_df = user_input_features()
 st.subheader('User Input parameters')
 st.write(input_df)
         
-
+#read
 penguins_raw = pd.read_csv('penguins_cleaned.csv')
 penguins = penguins_raw.drop(columns=['species'])
 df = pd.concat([input_df,penguins],axis=0)
@@ -73,7 +79,7 @@ st.write(prediction_proba)
 def load_image(img):
     im =Image.open(os.path.join(img))
     return im
-
+#images
 if penguins_species[prediction] == 'Chinstrap':
     st.text("Showing Chinstrap Penguin")
     st.image(load_image('chinstrap.jpg'))
@@ -83,11 +89,12 @@ elif penguins_species[prediction] == 'Gentoo':
 elif penguins_species[prediction] == 'Adelie':
     st.text("Showing Adelie Penguin")
     st.image(load_image('adelie.jpg'))
-
+#imp
 st.sidebar.subheader("An artcile about this app: https://proskillocity.blogspot.com/2021/05/penguin-classification-and-prediction.html")   
 st.write("Dataset citation: Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081")                     
 st.write("Dataset License: Creative Commons 0")  
-        
+
+#Skillocity
 image = Image.open('killocity (3).png')
 
 st.image(image, use_column_width=True)         
