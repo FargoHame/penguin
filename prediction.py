@@ -93,6 +93,11 @@ elif penguins_species[prediction] == 'Adelie':
 st.sidebar.subheader("An artcile about this app: https://proskillocity.blogspot.com/2021/05/penguin-classification-and-prediction.html")   
 st.write("Dataset citation: Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081")                     
 st.write("Dataset License: Creative Commons 0")  
+st.write("About the dataset: This dataset was created by Dr. Kristen Gorman and members of the Palmer Station, Antarctica (LTER). Palmer is one of the three US Antarctic Stations governed by the Antarctic Treaty of 1959. The Palmer Station is an interdisciplinary polar marine research program established in 1990.")
+
+st.write("The dataset was uploaded by Allison Horst and it is available by CC-0 license in accordance with the Palmer Station LTER Data Policy and the LTER Data Access Policy for Type 1 data. The dataset contains data for 344 penguins. There are 3 diffrent species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.") 
+
+
 
 #Skillocity
 image = Image.open('killocity (3).png')
