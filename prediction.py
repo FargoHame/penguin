@@ -1,3 +1,6 @@
+Certainly! Here's the corrected code:
+
+```python
 #import statements
 import streamlit as st
 import pandas as pd
@@ -7,18 +10,18 @@ from sklearn.ensemble import RandomForestClassifier
 from PIL import Image, ImageFilter, ImageEnhance
 import os
 
-#start
+# Start
 st.write("""
 # Penguin Prediction App
 - This app predicts the species of Palmer penguins found in Antarctica using Machine Learning!
 - App built by Pranav Sawant and Anshuman Shukla of Team Skillocity.
-- Dataset credits: Dr.Kristen Gorman and Palmer Station, Antarctica LTER and Allison Horst.
+- Dataset credits: Dr. Kristen Gorman and Palmer Station, Antarctica LTER and Allison Horst.
 - Note: User inputs for features are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of parameters can be changed from the sidebar.
 """)
 
 st.sidebar.header('User Input Features')
 
-#inputs
+# Inputs
 def user_input_features():
     island = st.sidebar.selectbox('Island', ('Biscoe', 'Dream', 'Torgersen'))
     sex = st.sidebar.selectbox('Sex', ('male', 'female'))
@@ -40,7 +43,7 @@ input_df = user_input_features()
 st.subheader('User Input parameters')
 st.write(input_df)
 
-#read
+# Read
 penguins_raw = pd.read_csv('penguins_cleaned.csv')
 penguins = penguins_raw.drop(columns=['species'])
 df = pd.concat([input_df, penguins], axis=0)
@@ -58,7 +61,7 @@ prediction = load_clf.predict(df)
 prediction_proba = load_clf.predict_proba(df)
 
 st.subheader('Prediction')
-penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'], dtype=bool)
+penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
 st.write(penguins_species[prediction])
 
 st.subheader('Prediction Probability')
@@ -69,26 +72,25 @@ def load_image(img):
     im = Image.open(os.path.join(img))
     return im
 
-#images
-if penguins_species[prediction]:
-    if penguins_species[prediction] == 'Chinstrap':
-        st.text("Showing Chinstrap Penguin")
-        st.image(load_image('chinstrap.jpg'))
-    elif penguins_species[prediction] == 'Gentoo':
-        st.text("Showing Gentoo Penguin")
-        st.image(load_image('gentoo.jpg'))
-    elif penguins_species[prediction] == 'Adelie':
-        st.text("Showing Adelie Penguin")
-        st.image(load_image('adelie.jpg'))
+# Images
+if penguins_species[prediction] == 'Chinstrap':
+    st.text("Showing Chinstrap Penguin")
+    st.image(load_image('chinstrap.jpg'))
+elif penguins_species[prediction] == 'Gentoo':
+    st.text("Showing Gentoo Penguin")
+    st.image(load_image('gentoo.jpg'))
+elif penguins_species[prediction] == 'Adelie':
+    st.text("Showing Adelie Penguin")
+    st.image(load_image('adelie.jpg'))
 
-#imp
+# Important info
 st.sidebar.subheader("An article about this app: https://proskillocity.blogspot.com/2021/05/penguin-classification-and-prediction.html")
 st.write("Dataset citation: Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081")
 st.write("Dataset License: Creative Commons 0")
 st.write("About the dataset: This dataset was created by Dr. Kristen Gorman and members of the Palmer Station, Antarctica (LTER). Palmer is one of the three US Antarctic Stations governed by the Antarctic Treaty of 1959. The Palmer Station is an interdisciplinary polar marine research program established in 1990.")
 st.write("The dataset was uploaded by Allison Horst and is available under the CC-0 license in accordance with the Palmer Station LTER Data Policy and the LTER Data Access Policy for Type 1 data. The dataset contains data for 344 penguins, including three different species collected from three islands in the Palmer Archipelago, Antarctica.")
 
-#Skillocity
+# Skillocity
 image = Image.open('killocity (3).png')
-
 st.image(image, use_column_width=True)
+```
