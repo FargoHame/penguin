@@ -93,4 +93,4 @@ st.write("The dataset was uploaded by Allison Horst and is available under the C
 # Skillocity
 image = Image.open('killocity (3).png')
 st.image(image, use_column_width=True)
-```
+
