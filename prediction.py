@@ -1,6 +1,6 @@
 #Certainly! Here's the corrected code:
 
-```python
+
 #import statements
 import streamlit as st
 import pandas as pd
